@@ -8,7 +8,7 @@ use pocketmine\Server;
 use pocketmine\event\entity\EntityMoveEvent;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\utils\TextFormat as c;
-class InvisibleBarrier extends PluginBase{
+class InvisibleBarrier extends PlayerMoveEvent{
   public function onEnable() : void{
     $this->getLogger()->notice(c::BOLD.c::DARK_AQUA."(!)".c::RESET.c::DARK_PURPLE." InvisibleBarrier has been enabled");
   }
@@ -18,7 +18,7 @@ class InvisibleBarrier extends PluginBase{
       // Send message if you want to inform players why they're knocked back
     }
   }
-  public function isInside(Position $pos, Position $pos1, Position $pos2){
-    return ($pos->getX() >= $pos1->getX() && $pos->getX() <= $pos2->getX() && $pos->getY() >= $pos2->getY() && $pos->getY() <= $pos1->getY() && $pos->getZ() >= $pos1->getZ() && $pos->getZ() <= $pos2->getZ() && $pos->getLevel()->getName() === $pos1->getLevel()->getName() $pos->getLevel()->getName() === $pos2->getLevel()->getName());
+  public function isInside(Position $pp, Position $p1, Position $p2){
+    return ($pp->getX() >= $p1->getX() && $pp->getX() <= $p2->getX() && $pp->getY() >= $p2->getY() && $pp->getY() <= $p1->getY() && $pp->getZ() >= $p1->getZ() && $pp->getZ() <= $p2->getZ() && $pp->getLevel()->getName() === $p1->getLevel()->getName() $pp->getLevel()->getName() === $p2->getLevel()->getName());
   }
 }
