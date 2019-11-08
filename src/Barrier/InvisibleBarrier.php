@@ -1,11 +1,10 @@
 <?php
 namespace Barrier;
-use pocketmine\plugin\PluginBase;
+use pocketmine\plugin\PluginManger;
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use pocketmine\Player;
 use pocketmine\Server;
-use pocketmine\event\entity\EntityMoveEvent;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\utils\TextFormat as c;
 class InvisibleBarrier extends PlayerMoveEvent{
