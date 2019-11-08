@@ -9,7 +9,7 @@ use pocketmine\event\entity\EntityMoveEvent;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\utils\TextFormat as c;
 class InvisibleBarrier extends PluginBase{
-  public function onEnable(){
+  public function onEnable() : void{
     $this->getLogger()->notice(c::BOLD.c::DARK_AQUA."(!)".c::RESET.c::DARK_PURPLE." InvisibleBarrier has been enabled");
   }
   public function onMove(PlayerMoveEvent $event){
