@@ -19,6 +19,6 @@ class InvisibleBarrier extends PluginBase{
     }
   }
   public function isInside(Position $pp, Position $p1, Position $p2){
-    return ($pp->getX() >= $p1->getX() && $pp->getX() <= $p2->getX() && $pp->getY() >= $p2->getY() && $pp->getY() <= $p1->getY() && $pp->getZ() >= $p1->getZ() && $pp->getZ() <= $p2->getZ() && $pp->getLevel()->getName() === $p1->getLevel()->getName() $pp->getLevel()->getName() === $p2->getLevel()->getName());
+    return ($pp->getFloorX() >= $p1->getFloorX() && $pp->getFloorX() <= $p2->getFloorX() && $pp->getFloorY() >= $p2->getFloorY() && $pp->getFloorY() <= $p1->getFloorY() && $pp->getFloorZ() >= $p1->getFloorZ() && $pp->getFloorZ() <= $p2->getFloorZ() && $pp->getLevel()->getName() === $p1->getLevel()->getName() $pp->getLevel()->getName() === $p2->getLevel()->getName());
   }
 }
