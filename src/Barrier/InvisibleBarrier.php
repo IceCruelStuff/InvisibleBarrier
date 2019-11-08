@@ -18,7 +18,7 @@ class InvisibleBarrier extends PluginBase{
       // Send message if you want to inform players why they're knocked back
     }
   }
-  public function isInside(Position $pp, Position $p1, Position $p2){
-    return ($pp->getFloorX() >= $p1->getFloorX() && $pp->getFloorX() <= $p2->getFloorX() && $pp->getFloorY() >= $p2->getFloorY() && $pp->getFloorY() <= $p1->getFloorY() && $pp->getFloorZ() >= $p1->getFloorZ() && $pp->getFloorZ() <= $p2->getFloorZ() && $pp->getLevel()->getName() === $p1->getLevel()->getName() $pp->getLevel()->getName() === $p2->getLevel()->getName());
+  public function isInside(Position $pos, Position $pos1, Position $pos2){
+    return ($pos->getX() >= $pos1->getX() && $pos->getX() <= $pos2->getX() && $pos->getY() >= $pos2->getY() && $pos->getY() <= $pos1->getY() && $pos->getZ() >= $pos1->getZ() && $pos->getZ() <= $pos2->getZ() && $pos->getLevel()->getName() === $pos1->getLevel()->getName() $pos->getLevel()->getName() === $pos2->getLevel()->getName());
   }
 }
