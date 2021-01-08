@@ -7,6 +7,7 @@ use pocketmine\command\Command;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\event\Listener;
 use pocketmine\level\Position;
+use pocketmine\math\Vector3;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
 use pocketmine\Player;
@@ -22,6 +23,11 @@ class InvisibleBarrier extends PluginBase implements Listener {
 
 	public function onMove(PlayerMoveEvent $event) {
 		$player = $event->getPlayer();
+		// $pos1 = new Vector3();
+		// $pos2 = new Vector3();
+		$config = $this->getConfig();
+		$pos1 = new Position($config->get("pos1-x"), $config->get("pos1-y"), $config->get("pos1-z"));
+		$pos2 = new Position($config->get("pos2-x"), $config->get("pos2-y"), $config->get("pos2-z"));
 		if ($this->isInside($player->getPosition(), $pos1, $pos2)) {
 			$player->teleport($event->getFrom());
 			$player->sendMessage($this->getConfig()->get("message"));
