@@ -6,6 +6,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\event\Listener;
+use pocketmine\level\Position;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
 use pocketmine\Player;
@@ -28,7 +29,16 @@ class InvisibleBarrier extends PluginBase implements Listener {
 	}
 
 	private function isInside(Position $position, Position $p1, Position $p2) {
-		return ($position->getX() >= $p1->getX() && $position->getX() <= $p2->getX() && $position->getY() >= $p2->getY() && $position->getY() <= $p1->getY() && $position->getZ() >= $p1->getZ() && $position->getZ() <= $p2->getZ() && $position->getLevel()->getName() === $p1->getLevel()->getName() && $position->getLevel()->getName() === $p2->getLevel()->getName());
+		return (
+			$position->getX() >= $p1->getX() &&
+			$position->getX() <= $p2->getX() &&
+			$position->getY() >= $p2->getY() &&
+			$position->getY() <= $p1->getY() &&
+			$position->getZ() >= $p1->getZ() &&
+			$position->getZ() <= $p2->getZ() &&
+			$position->getLevel()->getName() === $p1->getLevel()->getName() &&
+			$position->getLevel()->getName() === $p2->getLevel()->getName()
+		);
 	}
 
 	public function onDisable() {
