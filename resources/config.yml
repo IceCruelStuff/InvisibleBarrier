@@ -1,2 +1,12 @@
 # inform players why they're knocked back
 message: "You have walked into an invisible barrier"
+
+# coordinates of invisible barrier first corner
+pos1-x: 0
+pos1-y: 0
+pos1-z: 50
+
+# coordinates of invisible barrier second corner
+pos2-x: 50
+pos2-y: 50
+pos2-z: 50
