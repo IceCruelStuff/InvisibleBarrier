@@ -2,7 +2,7 @@ name: InvisibleBarrier
 main: Barrier\InvisibleBarrier
 api: 3.15.0
 author: IceCruelStuff
-version: 1.1
+version: 1.2
 load: STARTUP
 description: Adds invisible barriers to your PocketMine-MP server
 website: https://github.com/IceCruelStuff/InvisibleBarrier
